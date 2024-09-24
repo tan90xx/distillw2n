@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://QicongXie.github.io/end2endvc/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>DistillW2N Demo</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="DistillW2N Demo">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://tan90xx.github.io/distillw2n-demo/">
+<meta property="og:url" content="https://tan90xx.github.io/distillw2n-demo/">
+<meta name="twitter:card" content="summary">
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="icon" type="image/svg+xml" href="https://koe.ai/static/favicon.svg"> -->
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <section class="page-header">
+      
+      
+    </section>
+
+<section class="main-content">
+      <h1 id=""><center>DistillW2N: A Lightweight One-Shot Whisper to Normal Voice Conversion Model Using Distillation of Self-Supervised Features</center></h1>
+
+<center> Tianyi Tan, Haoxin Ruan, Xinan Chen, Kai Chen, Zhibin Lin and Jing Lu </center>
+<center> NCA Lab </center>
+
+<h2>0. Contents</h2>
+<ol>
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href="#Comparison">Demos -- Baselines</a></li>
+  <li><a href="#Comparison2">Demos -- DistillW2N</a></li>
+</ol>
+
+<br><br>
+<h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+<p> 
+  Whisper to Normal voice conversion (W2N) holds great promise for assistive communication and healthcare, making it an exciting area of research and development. Recent advancements in W2N are predominantly driven by self-supervised speech representation learning (SSL) techniques. While effective, SSL requires extensive parameters and high computational costs, making it impractical to be deployed in real-world applications. We propose DistillW2N, a lightweight one-shot W2N model. DistillW2N consists of a speech-to-unit (S2U) encoder, which seeks to close the gap between whispered and normal content units by distilling HuBERT-Soft representations from both normal speech and pseudo-whisper, and a unit-to-speech (U2S) decoder, which incorporates content units with timbre units by Style-Adaptive Layer Normalization (SALN) and leverages SoundStream decoder for lightweight high-quality speech synthesis. Moreover, we discover that the S2U encoder is able to learn from a VAD model to trim noise. Experiments show that DistillW2N significantly improves the intelligibility for whisper while preserving speaker similarity compared to prevailing SSL approaches. The resulting model demands only 10.91 M parameters and 1.63 GMACs per second and runs approximately 5 times faster than QuickVC. All samples and code are available at <a href="https://github.com/tan90xx/distillw2n">https://github.com/tan90xx/distillw2n</a>.
+
+<br><br>
+
+
+<h2>2. Demos -- Baselines<a name="Comparison"></a></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td style="text-align: center; width: 150px;" rowspan=2>Target Speaker</td>
+      <td style="text-align: center; width: 150px;" rowspan=2>Source speech</td>
+      <td style="text-align: center; width: 150px;" colspan=5>Method</td>
+    </tr>
+    <tr>
+      <td style="text-align: center; width: 150px;" rowspan=1>Pseudo-whisper</td>
+      <td style="text-align: center; width: 150px;" rowspan=1>Soft-VC</td>
+      <td style="text-align: center; width: 150px;" rowspan=1>WESPER</td>
+      <td style="text-align: center; width: 150px;" rowspan=1>FreeVC</td>
+      <td style="text-align: center; width: 150px;" rowspan=1>QuickVC</td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center">s000u003n</strong><audio style="width: 150px;" controls="" preload="none" src="raw/gt/s000u003n.wav"></audio></td>
+        <td style="text-align: center">s000u003w</strong><audio style="width: 150px;" controls="" preload="none" src="raw/test/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/pseudo/s000u003n.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/softvc/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/wesper/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/freevc/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/quickvc/s000u003w.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center">s001u003n</strong><audio style="width: 150px;" controls="" preload="none" src="raw/gt/s001u003n.wav"></audio></td>
+      <td style="text-align: center">s001u003w</strong><audio style="width: 150px;" controls="" preload="none" src="raw/test/s001u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/pseudo/s001u003n.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/softvc/s000u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/wesper/s000u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/freevc/s000u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/quickvc/s000u003w.wav"></audio></td>
+  </tr>
+    
+  <tr>
+    <td style="text-align: center">s002u003n</strong><audio style="width: 150px;" controls="" preload="none" src="raw/gt/s002u003n.wav"></audio></td>
+    <td style="text-align: center">s002u003w</strong><audio style="width: 150px;" controls="" preload="none" src="raw/test/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/pseudo/s002u003n.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/softvc/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/wesper/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/freevc/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/quickvc/s002u003w.wav"></audio></td>
+</tr>
+  
+<tr>
+  <td style="text-align: center">s003u003n</strong><audio style="width: 150px;" controls="" preload="none" src="raw/gt/s003u003n.wav"></audio></td>
+  <td style="text-align: center">s003u003w</strong><audio style="width: 150px;" controls="" preload="none" src="raw/test/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/pseudo/s003u003n.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/softvc/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/wesper/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/freevc/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 150px;" controls="" preload="none" src="raw/quickvc/s003u003w.wav"></audio></td>
+</tr>
+
+  </tbody>
+
+</table>
+
+<h2>3. Demos -- DistillW2N<a name="Comparison2"></a></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=2>Target Speaker</td>
+      <td style="text-align: center; width: 223px;" rowspan=2>Source speech</td>
+      <td style="text-align: center; width: 223px;" colspan=3>Ours</td>
+    </tr>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-FS2-HiFiGAN</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-MS-iSTFT-VITS</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong></td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center">s000u003n</strong><audio style="width: 223px;" controls="" preload="none" src="raw/gt/s000u003n.wav"></audio></td>
+        <td style="text-align: center">s000u003w</strong><audio style="width: 223px;" controls="" preload="none" src="raw/test/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_fs2_hifigan/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_ms_istft_vits/s000u003w.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_u2s/s000u003w.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center">s001u003n</strong><audio style="width: 223px;" controls="" preload="none" src="raw/gt/s001u003n.wav"></audio></td>
+      <td style="text-align: center">s001u003w</strong><audio style="width: 223px;" controls="" preload="none" src="raw/test/s001u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_fs2_hifigan/s001u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_ms_istft_vits/s001u003w.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_u2s/s001u003w.wav"></audio></td>
+  </tr>
+    
+  <tr>
+    <td style="text-align: center">s002u003n</strong><audio style="width: 223px;" controls="" preload="none" src="raw/gt/s002u003n.wav"></audio></td>
+    <td style="text-align: center">s002u003w</strong><audio style="width: 223px;" controls="" preload="none" src="raw/test/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_fs2_hifigan/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_ms_istft_vits/s002u003w.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_u2s/s002u003w.wav"></audio></td>
+</tr>
+  
+<tr>
+  <td style="text-align: center">s003u003n</strong><audio style="width: 223px;" controls="" preload="none" src="raw/gt/s003u003n.wav"></audio></td>
+  <td style="text-align: center">s003u003w</strong><audio style="width: 223px;" controls="" preload="none" src="raw/test/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_fs2_hifigan/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_ms_istft_vits/s003u003w.wav"></audio></td>
+  <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/s2u_u2s/s003u003w.wav"></audio></td>
+</tr>
+
+  </tbody>
+
+</table>
+
+<small> Our proposed models are in <strong>bold</strong> </small>
+
+
+</table>
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+</body></html>
