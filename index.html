@@ -33,8 +33,10 @@
 <h2>0. Contents</h2>
 <ol>
   <li><a href="#abstract">Abstract</a></li>
-  <li><a href="#Comparison">Demos -- Baselines</a></li>
+  <li><a href="#Comparison1">Demos -- Baselines</a></li>
   <li><a href="#Comparison2">Demos -- DistillW2N</a></li>
+  <li><a href="#Comparison3">Demos -- Sample Whisper</a></li>
+  <li><a href="#Reference">Reference</a></li>
 </ol>
 
 <br><br>
@@ -45,7 +47,7 @@
 <br><br>
 
 
-<h2>2. Demos -- Baselines<a name="Comparison"></a></h2>
+<h2>2. Demos -- Baselines<a name="Comparison1"></a></h2>
 
 <table>
   <tbody>
@@ -156,10 +158,206 @@
   </tbody>
 
 </table>
-
 <small> Our proposed models are in <strong>bold</strong> </small>
 
+<h2>4. Demos -- Sample Whisper<a name="Comparison3"></a></h2>
+<table>
+  <tbody>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=2>Source Speech</td>
+      <td style="text-align: center; width: 223px;" colspan=4>Comparision with with WESPER and DistillW2N(S2U-U2S)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s000</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s001</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s002</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s003</td>
+    </tr>
 
+    <tr>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s000_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s001_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s002_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s003_sample_whisper.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1>WESPER</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s000</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s001</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s002</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s003</td>
+    </tr>  
+    <tr>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/WES_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s000_QuickVC_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s001_QuickVC_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s002_QuickVC_sample_whisper.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/sample_whisper/s003_QuickVC_sample_whisper.wav"></audio></td>
+    </tr>
+
+  </tbody>
+
+</table>
+<small>Audio data are obtained from <a href="https://github.com/rkmt/wesper-demo/blob/main/sample_whisper.wav">WESPER demo page</a>. </small><br>
+<p></p>
+
+
+<table>
+  <tbody>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=2>Source Speech</td>
+      <td style="text-align: center; width: 223px;" colspan=4>Comparision with NMSE-DiscoGAN, MspeC-Net, WESPER and DistillW2N(s2u_u2s)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s000</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s001</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s002</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s003</td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s000_W2S_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s001_W2S_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s002_W2S_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s003_W2S_403_headset.wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s000_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s001_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s002_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s003_416_headset.wav"></audio></td>
+  </tr>
+
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1>WESPER</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s000</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s001</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s002</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s003</td>
+    </tr>  
+    <tr>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/WES_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s000_QuickVC_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s001_QuickVC_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s002_QuickVC_403_headset.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/s003_QuickVC_403_headset.wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/WES_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s000_QuickVC_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s001_QuickVC_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s002_QuickVC_416_headset.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/s003_QuickVC_416_headset.wav"></audio></td>
+    </tr>
+  <tr>
+    <td style="text-align: center; width: 223px;" rowspan=1>NMSE-DiscoGAN</td>
+    <td style="text-align: center; width: 223px;" rowspan=1>MspeC-Net</td>
+  </tr>  
+  <tr>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/DisocoGAN_403_headset.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_403_headset/MSpeC_403_headset.wav"></audio></td>
+</tr>
+  <tr>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/DisocoGAN_416_headset.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/W2S_416_headset/MSpeC_416_headset.wav"></audio></td>
+  </tr>
+  </tbody>
+
+</table>
+<small>Audio data are obtained from <a href="https://maitreyapatel.com/mspec-net-demo/">MSpeC-Net demo page</a> and <a href="https://wesperproj.github.io/">WESPER demo page</a>. </small><br>
+<p></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=2>Source Speech</td>
+      <td style="text-align: center; width: 223px;" colspan=4>Comparison with GMM, BLSTM, CycleGAN, AGAN-W2SC, WESPER and DistillW2N(s2u-u2s)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s000</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s001</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s002</td>
+      <td style="text-align: center; width: 223px;" rowspan=1><strong>S2U</strong>-<strong>U2S</strong>-s003</td>
+    </tr>
+
+    <tr>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s000_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s001_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s002_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s003_fw001.wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s000_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s001_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s002_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s003_fw002.wav"></audio></td>
+  </tr>
+
+    <tr>
+      <td style="text-align: center; width: 223px;" rowspan=1>WESPER</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s000</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s001</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s002</td>
+      <td style="text-align: center; width: 223px;" rowspan=1>QuickVC-s003</td>
+    </tr>  
+    <tr>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/WES_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s000_QuickVC_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s001_QuickVC_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s002_QuickVC_fw001.wav"></audio></td>
+        <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/s003_QuickVC_fw001.wav"></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/WES_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s000_QuickVC_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s001_QuickVC_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s002_QuickVC_fw002.wav"></audio></td>
+      <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/s003_QuickVC_fw002.wav"></audio></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; width: 223px;" rowspan=1>GMM</td>
+    <td style="text-align: center; width: 223px;" rowspan=1>BLSTM</td>
+    <td style="text-align: center; width: 223px;" rowspan=1>CycleGAN</td>
+    <td style="text-align: center; width: 223px;" rowspan=1>AGAN-W2SC</td>
+  </tr>  
+  <tr>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/GMM_fn001.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/BLSTM_fn001.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/CycleGAN-VC_fn001.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw001/AGAN-W2SC_fn001.wav"></audio></td>
+</tr>
+  <tr>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/GMM_fn002.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/BLSTM_fn002.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/CycleGAN-VC_fn002.wav"></audio></td>
+    <td style="text-align: center"><audio style="width: 223px;" controls="" preload="none" src="raw/data_in_the_wild/fw002/AGAN-W2SC_fn002.wav"></audio></td>
+  </tr>
+  </tbody>
+
+</table>
+<small>Audio data are obtained from <a href="https://mingze-sheep.github.io/b204_W2N.github.io/">AGAN-W2SC demo page</a> and <a href="https://wesperproj.github.io/">WESPER demo page</a>. </small><br>
+<p></p>
+
+<h2>5. Reference<a name="Reference"></a></h2>
+<small>
+<a href="https://github.com/chaufanglin/Normal2Whisper">Pseudo-whisper</a>: Z. Lin, T. Patel, and O. Scharenborg, “Improving Whispered Speech Recognition Performance Using Pseudo-Whispered Based Data Augmentation,” in ASRU 2023.<br>
+<a href="https://github.com/bshall/soft-vc">Soft-VC</a>: B. van Niekerk, M.-A. Carbonneau, J. Za¨ıdi, M. Baas, H. Seut´e, and H. Kamper, “A Comparison of Discrete and Soft Speech Units for Improved Voice Conversion,” in ICASSP 2022.<br>
+<a href="https://github.com/rkmt/wesper-demo">WESPER</a>: J. Rekimoto, “WESPER: Zero-shot and realtime whisper to normal voice conversion for whisper-based speech interactions,” in ACM CHI 2023.<br>
+<a href="https://github.com/OlaWod/FreeVC">FreeVC</a>: J. Li, W. Tu, and L. Xiao, “FreeVC: Towards High-Quality Text-Free One-Shot Voice Conversion,” in ICASSP 2023.<br>
+<a href="https://github.com/quickvc/QuickVC-VoiceConversion">QuickVC</a>: H. Guo, C. Liu, C. T. Ishi, and H. Ishiguro, “QUICKVC: A Lightweight VITS-Based Any-to-Many Voice Conversion Model using ISTFT for Faster Conversion,” in ASRU 2023.<br>
+NMSE-DiscoGAN: Shah, Nirmesh & Parmar, Mihir & Shah, Neil & Patil, Hemant. (2018). Novel MMSE DiscoGAN for Cross-Domain Whisper-to-Speech Conversion. Machine Learning in Speech and Language Processing (MLSLP) Workshop<br>
+MspeC-Net: H. Malaviya, J. Shah, M. Patel, J. Munshi and H. A. Patil, "Mspec-Net : Multi-Domain Speech Conversion Network," ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Barcelona, Spain, 2020, pp. 7764-7768.<br>
+GMM: Toda, and K. Shikano, “NAM-to-speech conversion with Gaussian mixture models,” in Proc. Conf. Int. Speech Commun. Assoc. INTER- SPEECH, Lisboa, Portugal, Sept. 2005, pp. 1957–1960.<br>
+BLSTM: G. N. Meenakshi, and P. K. Ghosh, “Whispered speech to neutral speech conversion using bidirectional LSTMs,” in Proc. Conf. Int. Speech Commun. Assoc. (INTERSPEECH), Hyderabad, India, 2018, pp. 491- 495.<br>
+CycleGAN: T. Kaneko, and H. Kameoka, “Parallel-data-free voice conver- sion using cycle-consistent adversarial networks,” arXiv preprint, arXiv:1711.11293, Dec. 2017.<br>
+AGAN-W2SC: Attention-guided generative adversarial network for whisper to normal speech conversion T Gao, J Zhou, H Wang, L Tao, HK Kwan - arXiv preprint arXiv:2111.01342, 2021<br>
+</small>
 </table>
       <footer class="site-footer">
         
