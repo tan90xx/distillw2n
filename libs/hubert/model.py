@@ -77,7 +77,9 @@ class HubertSoft(Hubert):
     def units(self, wav: torch.Tensor) -> torch.Tensor:
         wav = F.pad(wav, ((400 - 320) // 2, (400 - 320) // 2))
         x, _ = self.encode(wav)
-        return self.proj(x)
+        x = self.proj(x)
+        x = x.transpose(2, 1)
+        return x
 
 
 class HubertDiscrete(Hubert):
