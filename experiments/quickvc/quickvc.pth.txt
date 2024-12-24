@@ -1,0 +1,2 @@
+https://drive.google.com/drive/folders/1DF6RgIHHkn2aoyyUMt4_hPitKSc2YR9d
+# mv G_1200000.pth quickvc.pth
