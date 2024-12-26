@@ -6,11 +6,15 @@ The official codes for our paper: for "DistillW2N: A Lightweight One-Shot Whispe
 
 ## Preparation
 ### Environments
-We recommended the following dependencies:
+```Shell
+# create virtual python environment
+conda create --name distillw2n python=3.10.12 --yes
 
-- python >= 3.8
-- torch >= 1.12.0
-- torchaudio >= 0.13.0
+# install dependencies
+pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+sudo apt-get update && apt-get install -y libsndfile1 ffmpeg
+pip install -r requirements.txt
+```
   
 ### Datasets
 You just need to download the datasets under `YOURPATH`.
