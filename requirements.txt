@@ -1,0 +1,5 @@
+nnAudio 
+pesq 
+Cython 
+packaging 
+nemo_toolkit[asr]
