@@ -17,7 +17,22 @@ pip install -r requirements.txt
 ```
   
 ### Datasets
-You just need to download the datasets under `YOURPATH`.
+You just need to download the datasets under `YOURPATH`. 
+- Dataset Download
+  - For the libritts, ljspeech, and timit datasets, [datahelper](https://github.com/tan90xx/distillw2n/tree/master/datahelper) will automatically download if they are not found at `YOURPATH`.
+  - For the wtimit dataset, you will need to request it via email. Follow the appropriate procedures to obtain access and download the dataset to `YOURPATH`.
+- Dataset Preparation (Option)
+  - The [datapreper](https://github.com/tan90xx/distillw2n/tree/master/datapreper) offers options for PPW (Pseudo-whisper) and VAD (Voice Activity Detection) versions. You can choose to apply these processing steps according to your project's requirements.
+
+## Inference
+For quickvc and wesper please run:
+```Shell
+python compare_infer.py
+```
+For our models please run:
+```Shell
+python infer.py
+```
 
 ## Training
 ```Shell
