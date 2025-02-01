@@ -1,6 +1,6 @@
 # DistillW2N
 
-The official codes for our paper: for "DistillW2N: A Lightweight One-Shot Whisper to Normal Voice Conversion Model Using Distillation of Self-Supervised Features" (DistillW2N), which is accepted by ICASSP2025. We referred to the implementations of [SoundStream](https://github.com/kaiidams/soundstream-pytorch) to build up the repository.
+The official codes for our paper: for "DistillW2N: A Lightweight One-Shot Whisper to Normal Voice Conversion Model Using Distillation of Self-Supervised Features" (DistillW2N), which is accepted by ICASSP2025.
 ![system_diagram](https://github.com/user-attachments/assets/929662bf-263a-4d50-bc43-1f2ea66de777)
 
 ## Setup
@@ -25,3 +25,7 @@ You just need to download the datasets under `YOURPATH`.
   - For the wtimit dataset, you will need to request it via email. Follow the appropriate procedures to obtain access and download the dataset to `YOURPATH`.
 - Dataset Preparation (Option)
   - [datapreper](https://github.com/tan90xx/distillw2n/tree/master/datapreper) offers options for ppw (Pseudo-whisper) and vad (Voice Activity Detection) versions. You can choose to apply these processing steps according to your project's requirements.
+
+## Credits
+This implementation builds on
+- [SoundStream](https://github.com/kaiidams/soundstream-pytorch) for the training pipeline.
