@@ -1,9 +1,9 @@
 # DistillW2N
 
-The official codes for our paper: for "DistillW2N: A Lightweight One-Shot Whisper to Normal Voice Conversion Model Using Distillation of Self-Supervised Features" (DistillW2N), which is accepted by ICASSP2025.
-![system_diagram](https://github.com/user-attachments/assets/929662bf-263a-4d50-bc43-1f2ea66de777)
+PyTorch Implementation of [DistillW2N: A Lightweight One-Shot Whisper to Normal Voice Conversion Model Using Distillation of Self-Supervised Features](https://ieeexplore.ieee.org/abstract/document/10888480)
 
-## Setup
+## Quick Started
+### Setup
 1. Create a Python environment with e.g. conda: `conda create --name distillw2n python=3.10.12 --yes`
 2. Activate the new environment: `conda activate distillw2n`
 3. Install torch and torchaudio: `pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121`
@@ -11,11 +11,11 @@ The official codes for our paper: for "DistillW2N: A Lightweight One-Shot Whispe
 5. Install requirements with `pip install -r requirements.txt`
 6. Download models with links given in [txt](https://github.com/tan90xx/distillw2n/blob/master/experiments/)
 
-## Inference
+### Inference
 - For quickvc and wesper please run: `python compare_infer.py`
 - For our models please run: `python infer.py`
 
-## Training
+### Training
 - Please run: `python u2ss2u.py`
 
 ## Datasets
