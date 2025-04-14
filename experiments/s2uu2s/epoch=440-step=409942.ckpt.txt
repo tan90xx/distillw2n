@@ -1,1 +1,2 @@
-https://box.nju.edu.cn/f/be9207d41cba4c8a98db/?dl=1
+# https://box.nju.edu.cn/f/be9207d41cba4c8a98db/?dl=1
+https://github.com/tan90xx/distillw2n/releases/download/v1.0/epoch.440-step.409942.ckpt
