@@ -29,3 +29,10 @@ You just need to download the datasets under `YOURPATH`.
 ## Credits
 This implementation builds on
 - [SoundStream](https://github.com/kaiidams/soundstream-pytorch) for the training pipeline.
+
+
+⚠️ Our Token2Wav "vocoder" was trained using **less than 100 hours** of data. For higher-quality synthesis, we recommend using acoustic models like Soft-VC/Seed-VC to convert to a Mel spectrogram first, and then using the pre-trained vocoder like BigVGAN2.
+
+### ToDo List
+- [x] Add Seed-VC inference samples for comparison.
+- [ ] Train the SoundStream Decoder using a larger dataset of high-quality audio. (I currently don't have the resources to train the model.)
