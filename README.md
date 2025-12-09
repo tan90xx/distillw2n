@@ -1,7 +1,7 @@
 # DistillW2N
 
 PyTorch Implementation of [DistillW2N: A Lightweight One-Shot Whisper to Normal Voice Conversion Model Using Distillation of Self-Supervised Features](https://ieeexplore.ieee.org/abstract/document/10888480)
-
+![test](spectrogram_comparison.png)
 ## Quick Started
 ### Setup
 1. Create a Python environment with e.g. conda: `conda create --name distillw2n python=3.10.12 --yes`
@@ -35,4 +35,4 @@ This implementation builds on
 
 ### ToDo List
 - [x] Add Seed-VC inference samples for comparison.
-- [ ] Train the SoundStream Decoder using a larger dataset of high-quality audio. (I currently don't have the resources to train the model.)
+- [ ] Train the SoundStream Decoder using a larger dataset of high-quality audio. (Training in progress with limited resources)
